@@ -4,6 +4,7 @@ dotfiles-Balrog
 dotfiles from the Balrog Box or my computer.
 
 
-![by-sa](http://cap.sprunge.us/carharttjimmy)
+Here is a current screenshot to see my configs in action. 
 
-  [license]: http://creativecommons.org/licenses/by-sa/3.0/
+(http://cap.sprunge.us/carharttjimmy)
+
