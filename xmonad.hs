@@ -30,5 +30,3 @@ manageHook' = composeAll [ isFullscreen		--> doFullFloat
 			 , insertPosition Below Newer	
 		         ]
 
---key binding
---toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
