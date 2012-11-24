@@ -9,7 +9,7 @@ import XMonad.Hooks.InsertPosition
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Layout.NoBorders
 import XMonad.Hooks.ManageHelpers(doFullFloat,isFullscreen)
-main = xmonad =<< xmobar  myConfig
+main = xmonad =<< xmobar (ewmh myConfig)
 myConfig = defaultConfig     
         { modMask = mod4Mask
          ,terminal = "terminator"
@@ -17,9 +17,7 @@ myConfig = defaultConfig
 	, startupHook =  myStartup
 	, handleEventHook = fullscreenEventHook
 	, layoutHook = smartBorders $ layoutHook defaultConfig
-	, manageHook = composeOne [
-	      isFullscreen -?> doFullFloat
-          ]
+	, manageHook =  manageHook'
        }
 --Workspaces for my computer.
 myWorkspaces = ["1:Home" , "2:Web" , "3:Media" , "4:Development" , "5:Stuff" , "6:Terminals", "7:File Manager" , "8:IM", "9:Moar" ]
@@ -27,4 +25,10 @@ myWorkspaces = ["1:Home" , "2:Web" , "3:Media" , "4:Development" , "5:Stuff" , "
 --Startup
 myStartup = do
     spawn "bash $HOME/.fehbg"
+--window management
+manageHook' = composeAll [ isFullscreen		--> doFullFloat
+			 , insertPosition Below Newer	
+		         ]
 
+--key binding
+--toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
