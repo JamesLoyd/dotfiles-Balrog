@@ -1,5 +1,4 @@
 import XMonad
-import XMonad.Hooks.EwmhDesktops
 import qualified XMonad.StackSet as W
 import qualified Data.Map as M
 import System.Exit
@@ -7,9 +6,11 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.UrgencyHook
 import XMonad.Hooks.InsertPosition
+import XMonad.Hooks.EwmhDesktops
 import XMonad.Layout.NoBorders
 import XMonad.Hooks.ManageHelpers(doFullFloat,isFullscreen)
 import XMonad.Hooks.SetWMName
+import qualified XMonad.Actions.FlexibleManipulate as Flex
 main = xmonad =<< xmobar (ewmh myConfig)
 myConfig = defaultConfig     
         { modMask = mod4Mask
