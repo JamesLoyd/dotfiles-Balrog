@@ -3,15 +3,16 @@ Config { font = "-*-terminus-*-*-*-*-12-*-*-*-*-*-*-u"
        , fgColor = "#C9A34E"
        , position = Top
        , lowerOnStart = True
-       , commands = [ Run Network "wlan0" ["-L", "8", "-H", "32", "-l", "#C9A34E", "-n", "#429942" ,"-h", "#A36666", "-t", "<dev>: <rx> : <tx>"] 10
+       , commands = [ Run Network "wlp3s0" ["-L", "8", "-H", "32", "-l", "#C9A34E", "-n", 
+"#429942" ,"-h", "#A36666", "-t", "<dev>: <rx> : <tx>"] 10
                     , Run Cpu ["-L","3","-H","50","--normal","#429942","--high","#A36666"] 10
                     , Run Memory ["-t","Mem: <usedratio>%"] 10
     		    , Run Date "%a %b %_d %Y %l:%M:%S%p" "date" 10
 		    , Run Weather "KEQY" ["-t","<station>-T:<tempF>F-<tempC>C|W:<wind>|S:<skyCondition>|V:<visibility>|D:<dewPoint>|P: <pressure>","-L","18","-H","25","--normal","green","--high","red","--low","lightblue"] 30
-                    , Run StdinReader
 		    , Run Com "conky" ["-q", "-i", "1"] "conky" 600
+                    , Run StdinReader
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " %StdinReader% | %conky% }{ %cpu% <fc=#429942>|</fc> %memory% <fc=#429942>|</fc> %KEQY% <fc=#429942>|</fc> %wlan0% <fc=#429942>|</fc> %date%"
+       , template = " %StdinReader% | %conky% }{ %cpu% <fc=#429942>|</fc> %memory% <fc=#429942>|</fc> %KEQY% <fc=#429942>|</fc> %wlp3s0% <fc=#429942>|</fc> %date%"
 	 }

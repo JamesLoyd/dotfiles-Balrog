@@ -35,5 +35,7 @@ manageHook' = composeAll [ isFullscreen		--> doFullFloat
 			 , className =? "Steam" --> doFloat
 			 , className =? "net-minecraft-MinecraftLauncher" --> doFullFloat
 			 , className =? "steam" --> doFullFloat -- bigpicture-mode 
+			 , className =? "Geany" --> doShift "4:Development"
+			 , className =? "simutrans" --> doFloat
 			 , insertPosition Below Newer	
 		         ]
