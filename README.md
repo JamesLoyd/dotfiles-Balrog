@@ -10,5 +10,5 @@ Here is a current screenshot to see my configs in action.
 
 Packages's dotfiles
 ----------------------------
-[]xmonad
-[]xmobar
+>*xmonad
+>*xmobar
